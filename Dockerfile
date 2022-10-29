@@ -12,7 +12,7 @@ COPY . .
 RUN pip install -r requirements.txt
 
 RUN python manage.py collectstatic --noinput
-
+RUN python manage.py crontab add
 
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku
