@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import ping , getAllListedCompany
+from .views import ping , getAllListedCompany, getCompanywiseData
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ping/', ping, name="ping"),
-    path('stocks/',getAllListedCompany, name="get all listed company of nse")
+    path('stocks/',getAllListedCompany, name="get all listed company of nse"),
+    path('companywise/', getCompanywiseData)
 ]
