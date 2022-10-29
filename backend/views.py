@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from .Tools import getAllCompany , getCompanyData
+from .Tools import getAllCompany , getCompanyData , getPeriodicCompanyData
 
 def ping(request):
     data = {'ping': 'pong!'}
@@ -10,3 +10,6 @@ def getAllListedCompany(request):
 
 def getCompanywiseData(request):
    return JsonResponse(getCompanyData(request.GET.get("company"),request.GET.get("start_date"),request.GET.get("end_date")))
+
+def getPeriodicComapnywiseData(request):
+    return JsonResponse(getPeriodicCompanyData(request.GET.get("company"),request.GET.get("period"),request.GET.get("interval")))

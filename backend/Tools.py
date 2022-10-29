@@ -9,6 +9,11 @@ def getAllCompany():
     return tickers.to_dict()
 
 def getCompanyData(company,start_date,end_date):
-    data = pdr.get_data_yahoo(company+".NS", start=start_date, end=end_date)
+    data = pdr.get_data_yahoo(company, start=start_date, end=end_date)
+    data.index=data.index.astype(str)
+    return data.to_dict()
+
+def getPeriodicCompanyData(company,period,interval):
+    data = yf.download(tickers=company, period=period, interval=interval)
     data.index=data.index.astype(str)
     return data.to_dict()
