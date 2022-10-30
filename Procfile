@@ -1,1 +1,1 @@
-clock: python ./backend/clock.py
+clock: python clock.py --loglevel=INFO
